@@ -181,14 +181,14 @@ Func _upgradesButtonClicked()
 
 	; Upgrade #1
 	$upgradeButton_id1 = GUICtrlCreateButton($upgradeLevel_id1, 10, 50, 25, 25)
-	$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: " & $clicksPerClick & " --> " & $clicksPerClickNext, 45, 56, 175, 25)
+	$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: " & $clicksPerClick & " --> " & $clicksPerClickNext, 45, 56, 150, 25)
 	$upgradeLabel_id1_CostLabel = GUICtrlCreateLabel("Cost: " & $upgrade_id1_allCosts[$upgrade_id1_currentCost] & " Clicks", 210, 56, 105, 25)
 
 	If $upgradeLevel_id1 >= 11 Then
 		GUICtrlSetState($upgradeButton_id1, $GUI_DISABLE) ; Disable button
-		$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Max)", 45, 56, 175, 25)
+		$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Max)", 45, 56, 150, 25)
 		GUICtrlDelete($upgradeLabel_id1_Description)
-		$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Max)", 45, 56, 175, 25)
+		$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Max)", 45, 56, 150, 25)
 		GUICtrlDelete($clickerButton)
 		$clicksPerClick = 10
 		$clickerButton = GUICtrlCreateButton("+" & $clicksPerClick & " Clicks", 325, 155, 120, 50)
@@ -196,27 +196,27 @@ Func _upgradesButtonClicked()
 
 	; Upgrade #2
 	$upgradeButton_id2 = GUICtrlCreateButton($upgradeLevel_id2, 10, 85, 25, 25)
-	$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: " & $guessesPerGuess & " --> " & $guessesPerGuessNext, 45, 91, 175, 25)
+	$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: " & $guessesPerGuess & " --> " & $guessesPerGuessNext, 45, 91, 150, 25)
 	$upgradeLabel_id2_CostLabel = GUICtrlCreateLabel("Cost: " & $upgrade_id2_allCosts[$upgrade_id2_currentCost] & " Guesses", 210, 91, 105, 25)
 
 	If $upgradeLevel_id2 >= 11 Then
 		GUICtrlSetState($upgradeButton_id2, $GUI_DISABLE) ; Disable button
-		$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Max)", 45, 91, 175, 25)
+		$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Max)", 45, 91, 150, 25)
 		GUICtrlDelete($upgradeLabel_id2_Description)
-		$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Max)", 45, 91, 175, 25)
+		$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Max)", 45, 91, 150, 25)
 		$guessesPerGuess = 10
 	EndIf
 
 	; Upgrade #3
 	$upgradeButton_id3 = GUICtrlCreateButton($upgradeLevel_id3, 10, 120, 25, 25)
-	$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: " & $shiftsPerShift & " --> " & $shiftsPerShiftNext, 45, 126, 175, 25)
+	$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: " & $shiftsPerShift & " --> " & $shiftsPerShiftNext, 45, 126, 150, 25)
 	$upgradeLabel_id3_CostLabel = GUICtrlCreateLabel("Cost: " & $upgrade_id3_allCosts[$upgrade_id3_currentCost] & " Shifts", 210, 126, 105, 25)
 
 	If $upgradeLevel_id3 >= 11 Then
 		GUICtrlSetState($upgradeButton_id3, $GUI_DISABLE) ; Disable button
-		$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Max)", 45, 126, 175, 25)
+		$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Max)", 45, 126, 150, 25)
 		GUICtrlDelete($upgradeLabel_id3_Description)
-		$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Max)", 45, 126, 175, 25)
+		$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Max)", 45, 126, 150, 25)
 		GUICtrlDelete($shiftsButton)
 		$shiftsPerShift = 10
 		$shiftsButton = GUICtrlCreateButton("Press 'SHIFT'" & @CRLF & "for " & $shiftsPerShift & " Shifts", 325, 395, 120, 50, BitOR($BS_MULTILINE, $BS_CENTER))
@@ -239,9 +239,9 @@ Func _upgradesButtonUpgrade_id1_Clicked()
 
 			If $upgradeLevel_id1 >= 11 Then
 				GUICtrlSetState($upgradeButton_id1, $GUI_DISABLE) ; Disable button
-				$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Maxed)", 45, 56, 175, 25)
+				$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Maxed)", 45, 56, 150, 25)
 				GUICtrlDelete($upgradeLabel_id1_Description)
-				$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Maxed)", 45, 56, 175, 25)
+				$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: 10 (Maxed)", 45, 56, 150, 25)
 				GUICtrlDelete($clickerButton)
 				$clicksPerClick = 10
 				$clickerButton = GUICtrlCreateButton("+" & $clicksPerClick & " Clicks", 325, 155, 120, 50)
@@ -251,7 +251,7 @@ Func _upgradesButtonUpgrade_id1_Clicked()
 			$clickerButton = GUICtrlCreateButton("+" & $clicksPerClick & " Clicks", 325, 155, 120, 50)
 
 			$clicksLabel = GUICtrlCreateLabel("Clicks: " & $clicks, 349, 58, 90, 15)
-			$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: " & $clicksPerClick & " --> " & $clicksPerClickNext, 45, 56, 175, 25)
+			$upgradeLabel_id1_Description = GUICtrlCreateLabel("Clicks per Click: " & $clicksPerClick & " --> " & $clicksPerClickNext, 45, 56, 150, 25)
 
 			$upgradeLabel_id1_CostLabel = GUICtrlCreateLabel("Cost: " & $upgrade_id1_allCosts[$upgrade_id1_currentCost] & " Clicks", 210, 56, 105, 25) ; Next cost
 
@@ -276,14 +276,14 @@ Func _upgradesButtonUpgrade_id2_Clicked()
 
 			If $upgradeLevel_id2 >= 11 Then
 				GUICtrlSetState($upgradeButton_id2, $GUI_DISABLE) ; Disable button
-				$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Maxed)", 45, 91, 175, 25)
+				$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Maxed)", 45, 91, 150, 25)
 				GUICtrlDelete($upgradeLabel_id2_Description)
-				$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Maxed)", 45, 91, 175, 25)
+				$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: 10 (Maxed)", 45, 91, 150, 25)
 				$guessesPerGuess = 10
 			EndIf
 
 			$guessesLabel = GUICtrlCreateLabel("Guesses: " & $guesses, 349, 73, 90, 15)
-			$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: " & $guessesPerGuess & " --> " & $guessesPerGuessNext, 45, 91, 175, 25)
+			$upgradeLabel_id2_Description = GUICtrlCreateLabel("Guesses per Guess: " & $guessesPerGuess & " --> " & $guessesPerGuessNext, 45, 91, 150, 25)
 
 			$upgradeLabel_id2_CostLabel = GUICtrlCreateLabel("Cost: " & $upgrade_id2_allCosts[$upgrade_id2_currentCost] & " Guesses", 210, 91, 105, 25) ; Next cost
 
@@ -309,9 +309,9 @@ Func _upgradesButtonUpgrade_id3_Clicked()
 
 			If $upgradeLevel_id3 >= 11 Then
 				GUICtrlSetState($upgradeButton_id3, $GUI_DISABLE) ; Disable button
-				$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Maxed)", 45, 126, 175, 25)
+				$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Maxed)", 45, 126, 150, 25)
 				GUICtrlDelete($upgradeLabel_id3_Description)
-				$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Maxed)", 45, 126, 175, 25)
+				$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: 10 (Maxed)", 45, 126, 150, 25)
 				GUICtrlDelete($shiftsButton)
 				$shiftsPerShift = 10
 				$shiftsButton = GUICtrlCreateButton("Press 'SHIFT'" & @CRLF & "for " & $shiftsPerShift & " Shifts", 325, 395, 120, 50, BitOR($BS_MULTILINE, $BS_CENTER))
@@ -321,7 +321,7 @@ Func _upgradesButtonUpgrade_id3_Clicked()
 			$shiftsButton = GUICtrlCreateButton("Press 'SHIFT'" & @CRLF & "for " & $shiftsPerShift & " Shifts", 325, 395, 120, 50, BitOR($BS_MULTILINE, $BS_CENTER))
 
 			$shiftsLabel = GUICtrlCreateLabel("Shifts: " & $shifts, 349, 88, 90, 15)
-			$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: " & $shiftsPerShift & " --> " & $shiftsPerShiftNext, 45, 126, 175, 25)
+			$upgradeLabel_id3_Description = GUICtrlCreateLabel("Shifts per Shift: " & $shiftsPerShift & " --> " & $shiftsPerShiftNext, 45, 126, 150, 25)
 
 			$upgradeLabel_id3_CostLabel = GUICtrlCreateLabel("Cost: " & $upgrade_id3_allCosts[$upgrade_id3_currentCost] & " Shifts", 210, 126, 105, 25)
 
@@ -548,10 +548,3 @@ While True
 	EndIf
 
 WEnd
-
-; TO-DO
-; ✅ 1) Statistics (Button --> Clears part of the screen --> Shows statistics)
-; ✅ 2) Achievmements (Button --> Clears part of the screen --> Shows achievements)
-; ✅ 3) Upgrades (Button --> Clears part of the screen --> Shows upgrade buttons with labels)
-; ✅ 4) End condition --> Achievement "Buy all upgrades"
-; ✅ 5) Bugs
